@@ -1,16 +1,36 @@
 
 <?php 
 
-	// function greet($greeting, $name){
-	// 	echo strtoupper($greeting).' '.$name.'!';
-	// }
-	// greet('Let us roll ','Harlow Whore');
+	//real world example of using class
 
-$num = 10;
-if($num != 10){
-	echo "Yup!";
-} else {
-	echo "Nope!";
+class User{
+	//method: function in a class
+	//access identifiers public protected private
+
+	public function __construct(){
+		//echo 'Constructor Called<br>';
+	}
+
+	public function register(){
+		echo 'User Registered';
+	}
+
+	public function login($username, $password){
+		$this->auth_user($username, $password);
+	}
+
+	public function auth_user($username, $password){
+		echo $username. ' is authenticated.';
+	}
+
+	public function __destruct(){
+		//echo '<br>Destructor Called';
+	}
 }
+
+$User = new User;
+$User->login('Dog Meat', "fly@dowqn");
+
+//$User->register();
 
  ?>
