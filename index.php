@@ -1,16 +1,16 @@
 <?php 
 //class and magic methods
+
 class Post{
 	private $name;
 
 	public function __set($name, $value){
-		echo 'We have set '.$name.' to <strong>'.$value.'</strong><br>';
+		echo 'Setting '.$name.' to <strong>'.$value.'</strong><br>';
 		$this->name = $value;
 	}
 
 	public function __get($name){
 		echo 'Getting '.$name.' <strong>'.$this->name.'</strong><br>';
-		
 	}
 
 	public function __isset($name){
@@ -18,9 +18,7 @@ class Post{
 		return isset($this->name);
 	}
 }
-$post = new Post;
-$post->name = 'Testing Unit Mappa';
-echo $post->name;
-var_dump(isset($post->name));
-
- ?>
+	$post = new Post;
+	$post->name = "Yellow Cricket";
+	echo $post->name;
+	var_dump(isset($post->name));
