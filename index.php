@@ -1,24 +1,23 @@
 <?php 
 //class and magic methods
 
-class Post{
-	private $name;
+class First{
+	
+	public $id = 3443;
+	public $name = 'Morris Flann';
 
-	public function __set($name, $value){
-		echo 'Setting '.$name.' to <strong>'.$value.'</strong><br>';
-		$this->name = $value;
+	public function utterance(){
+		echo 'Say something for the sake of utterance!';
 	}
 
-	public function __get($name){
-		echo 'Getting '.$name.' <strong>'.$this->name.'</strong><br>';
-	}
+}
 
-	public function __isset($name){
-		echo 'Is '.$name.' set?<br>';
-		return isset($this->name);
+class Second extends First{
+	public function synth($name, $id){
+
+		echo 'My name is '.$this->name.'. My id is '.$this->id.'.';
 	}
 }
-	$post = new Post;
-	$post->name = "Yellow Cricket";
-	echo $post->name;
-	var_dump(isset($post->name));
+
+$second = new Second;
+echo $second->synth('','');
