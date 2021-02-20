@@ -3,26 +3,29 @@
 
 class First{
 	
-	private $id = 3443;
+	public $id = 3443;
 	public $name = 'Morris Flann';
 
 	// public function __set(){
-		
+
 	// }
 
-	public function utterance(){
-		echo 'Say something for the sake of utterance!';
+	public function utterance($word){
+		echo $word;
 	}
 
 }
 
 class Second extends First{
-	public function synth($name, $id){
+	function synth($name, $id){
 
-		echo 'My name is '.$this->name.'. My id is '.$this->id.'.';
+		echo 'My name is '.$this->name.'. My id is '.$id.'.';
+	}
 		
 	}
-}
+
 
 $second = new Second;
-echo $second->synth('','').$second->utterance();
+// echo $second->synth('','').$second->utterance('To the wrong nose, a rose stinks.');
+echo $second->name.'<br>';
+$second->utterance('Girly greedy guts!<br>');
