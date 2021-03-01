@@ -1,8 +1,8 @@
 <?php  
 
-class Foo{
+final class Foo{
 
 	public function sayHello(){
-	return "Hello";
+	echo "Hello is just a disguised O, Hell.";
 	}
 }

@@ -1,7 +1,7 @@
 <?php  
 
-class Bar{
-	public function sayBye(){
-		return "Adios, good-bye!";
+class Bar extends Foo{
+	public function sayHello(){
+		echo "Adios, good-bye! I say hello from Bar";
 	}
 }
