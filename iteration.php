@@ -18,6 +18,7 @@ $people = new People;
 
 foreach($people as $key => $value){
 			print "$key => $value\n";
+			
 		}
 
 //$people->iterateObject();
