@@ -30,7 +30,7 @@
 			}
 		}
 
-		public funciton query($query){
+		public function query($query){
 			$this->stmt = $this->dbh->prepare($query);
 		}
 		public function bind($param, $value, $type = null){
@@ -51,8 +51,16 @@
 				}
 
 			}
+
 			$this->stmt->bindValue($param, $value, $type);
+		}
+		public function execute(){
+			return $this->stmt->execute();
+		}
+		public function resultset(){
+			$this->execute();
+			return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
 	}
 
-?>	
+	
